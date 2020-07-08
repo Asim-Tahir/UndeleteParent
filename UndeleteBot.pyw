@@ -17,7 +17,7 @@ def main():
         parent1_id=new_comment_id=parent2_body=parent2_comment=parent2_id=submission_body=submission_title=parent1_comment=submission= ''
         new_comment_id = new_comment.fullname
 
-        if new_comment_id.startswith('t1_') and 'u/undeleteparent' in new_comment.body.lower():
+        if new_comment_id.startswith('t1_') and str(reddit.user.me()) in new_comment.body.lower():
             parent1_id = get_parent_id(new_comment)
 
             if parent1_id.startswith('t1_'):
