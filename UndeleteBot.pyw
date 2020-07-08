@@ -1,5 +1,4 @@
-import praw, json, requests, time, re
-from datetime import datetime, timedelta
+import praw, json, requests, time
 
 with open('textFiles/secrets.txt', 'r') as file:
     login_info = file.read().split('\n')
@@ -28,6 +27,7 @@ def main():
                 if parent2_id.startswith('t1_'):
                     parent2_comment = reddit.comment(parent2_id[3:])
                     parent2_body = get_comment_data(parent2_id)
+                    parent2_body = str(parent2_body).replace('\n', '\n>').replace('&gt;', '').replace('&amp;gt;', '')
 
                     if parent2_comment.body != '[removed]':
                         print("UNDELETE COMMENT")
@@ -121,3 +121,4 @@ def reply_submission(new_comment, submission_title, submission_body):
 
 while True:
     main()
+    time.sleep(5)
