@@ -75,7 +75,7 @@ def main():
                 new_comment.mark_read()
         
         else:
-            # Not a comment. If t4_ it is a ban notification. Otherwise idk wtf it is so just mark it as read.
+            # Not a comment. If t4_ it is a ban notification.
             new_comment.mark_read()
             
 
