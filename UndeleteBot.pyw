@@ -49,7 +49,8 @@ def main():
                     new_comment.mark_read()
 
                 else:
-                    print("Replied to wrong comment? Ignore?")
+                    print("User replied to wrong comment.")
+                    new_comment.mark_read()
 
             elif parent1_id.startswith('t3_'):
                 submission = reddit.submission(parent1_id[3:])
